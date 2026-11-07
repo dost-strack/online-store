@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Магазин — интернет-магазин</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-in">
+    <a class="logo" href="#">🛍️ Магазин</a>
+    <input id="search" type="search" placeholder="Поиск товаров…">
+    <button id="cart-btn" class="cart-btn">🛒 Корзина <span id="cart-count">0</span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Всё нужное — в одном месте</h1>
+    <p>Быстрая доставка и честные цены</p>
+  </div>
+</section>
+
+<main class="container">
+  <div id="categories" class="categories"></div>
+  <div id="products" class="grid"></div>
+  <p id="empty" class="empty" hidden>Ничего не найдено</p>
+</main>
+
+<footer class="footer"><div class="container">© 2026 Магазин · Все права защищены</div></footer>
+
+<aside id="cart" class="cart" aria-hidden="true">
+  <div class="cart-head"><h2>Корзина</h2><button id="cart-close" aria-label="Закрыть">✕</button></div>
+  <div id="cart-items" class="cart-items"></div>
+  <div class="cart-foot">
+    <div class="total">Итого: <b id="cart-total">0 ₽</b></div>
+    <button id="checkout-btn" class="btn">Оформить заказ</button>
+    <button id="clear-btn" class="btn btn-ghost">Очистить</button>
+  </div>
+</aside>
+<div id="overlay" class="overlay" hidden></div>
+
+<dialog id="checkout">
+  <form id="checkout-form">
+    <h2>Оформление заказа</h2>
+    <label>Имя<input name="name" required></label>
+    <label>Телефон<input name="phone" type="tel" required></label>
+    <label>Адрес доставки<input name="address" required></label>
+    <p class="total">К оплате: <b id="checkout-total"></b></p>
+    <div class="row">
+      <button type="button" id="checkout-cancel" class="btn btn-ghost">Отмена</button>
+      <button type="submit" class="btn">Подтвердить</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
